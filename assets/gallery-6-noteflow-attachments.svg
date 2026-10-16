@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0e14" />
+      <stop offset="100%" stop-color="#141924" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" fill="url(#bgGrad6)" rx="16"/>
+  <rect width="798" height="518" x="1" y="1" fill="none" stroke="#252d3d" stroke-width="1.5" rx="15"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#141924" rx="16"/>
+  <rect x="0" y="26" width="800" height="16" fill="#141924"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#252d3d" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#8e95a5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">NoteFlow — 本地附件多媒体资产库与双向引用管理器</text>
+
+  <!-- Filter & Storage Stats -->
+  <g transform="translate(24, 60)">
+    <rect width="752" height="42" rx="8" fill="#151a24" stroke="#252d3d"/>
+    <text x="16" y="26" fill="#f0f6fc" font-family="sans-serif" font-size="13" font-weight="700">📁 资产存储路径: ./assets/ (相对路径无锁绑定 · 100% 可迁移)</text>
+    <rect x="630" y="9" width="106" height="24" rx="12" fill="rgba(56,139,253,0.15)" stroke="#388bfd"/>
+    <text x="683" y="25" text-anchor="middle" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="11">共 342 个资产</text>
+  </g>
+
+  <!-- Media Asset Cards Grid (2x3) -->
+  <!-- Asset 1 -->
+  <g transform="translate(24, 120)">
+    <rect width="236" height="165" rx="8" fill="#111620" stroke="#252d3d"/>
+    <rect x="12" y="12" width="212" height="85" rx="6" fill="#1a2230"/>
+    <circle cx="118" cy="54" r="20" fill="rgba(56,139,253,0.2)"/>
+    <text x="118" y="60" text-anchor="middle" font-size="18">🖼️</text>
+    <text x="12" y="118" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">agent_arch_v2.png</text>
+    <text x="12" y="136" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">842 KB · 引用数: 6 篇笔记</text>
+    <rect x="160" y="138" width="64" height="18" rx="4" fill="rgba(16,185,129,0.15)"/>
+    <text x="192" y="151" text-anchor="middle" fill="#3fb950" font-size="9">PNG IMAGE</text>
+  </g>
+
+  <!-- Asset 2 -->
+  <g transform="translate(282, 120)">
+    <rect width="236" height="165" rx="8" fill="#111620" stroke="#252d3d"/>
+    <rect x="12" y="12" width="212" height="85" rx="6" fill="#1a2230"/>
+    <circle cx="118" cy="54" r="20" fill="rgba(139,92,246,0.2)"/>
+    <text x="118" y="60" text-anchor="middle" font-size="18">🎵</text>
+    <text x="12" y="118" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">voice_demo_rtf018.flac</text>
+    <text x="12" y="136" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">1.2 MB · 引用数: 2 篇笔记</text>
+    <rect x="160" y="138" width="64" height="18" rx="4" fill="rgba(139,92,246,0.15)"/>
+    <text x="192" y="151" text-anchor="middle" fill="#d2a8ff" font-size="9">FLAC AUDIO</text>
+  </g>
+
+  <!-- Asset 3 -->
+  <g transform="translate(540, 120)">
+    <rect width="236" height="165" rx="8" fill="#111620" stroke="#252d3d"/>
+    <rect x="12" y="12" width="212" height="85" rx="6" fill="#1a2230"/>
+    <circle cx="118" cy="54" r="20" fill="rgba(245,158,11,0.2)"/>
+    <text x="118" y="60" text-anchor="middle" font-size="18">📄</text>
+    <text x="12" y="118" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">teamflow_spec_v3.pdf</text>
+    <text x="12" y="136" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">3.4 MB · 引用数: 8 篇笔记</text>
+    <rect x="160" y="138" width="64" height="18" rx="4" fill="rgba(245,158,11,0.15)"/>
+    <text x="192" y="151" text-anchor="middle" fill="#f59e0b" font-size="9">PDF DOC</text>
+  </g>
+
+  <!-- Asset 4 -->
+  <g transform="translate(24, 305)">
+    <rect width="236" height="165" rx="8" fill="#111620" stroke="#252d3d"/>
+    <rect x="12" y="12" width="212" height="85" rx="6" fill="#1a2230"/>
+    <circle cx="118" cy="54" r="20" fill="rgba(6,182,212,0.2)"/>
+    <text x="118" y="60" text-anchor="middle" font-size="18">📐</text>
+    <text x="12" y="118" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">topology_graph.svg</text>
+    <text x="12" y="136" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">48 KB · 引用数: 12 篇笔记</text>
+    <rect x="160" y="138" width="64" height="18" rx="4" fill="rgba(6,182,212,0.15)"/>
+    <text x="192" y="151" text-anchor="middle" fill="#22d3ee" font-size="9">SVG VECTOR</text>
+  </g>
+
+  <!-- Asset 5 -->
+  <g transform="translate(282, 305)">
+    <rect width="236" height="165" rx="8" fill="#111620" stroke="#252d3d"/>
+    <rect x="12" y="12" width="212" height="85" rx="6" fill="#1a2230"/>
+    <circle cx="118" cy="54" r="20" fill="rgba(56,139,253,0.2)"/>
+    <text x="118" y="60" text-anchor="middle" font-size="18">📊</text>
+    <text x="12" y="118" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">fts5_benchmark.png</text>
+    <text x="12" y="136" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">410 KB · 引用数: 4 篇笔记</text>
+    <rect x="160" y="138" width="64" height="18" rx="4" fill="rgba(56,139,253,0.15)"/>
+    <text x="192" y="151" text-anchor="middle" fill="#58a6ff" font-size="9">BENCHMARK</text>
+  </g>
+
+  <!-- Asset 6 -->
+  <g transform="translate(540, 305)">
+    <rect width="236" height="165" rx="8" fill="#111620" stroke="#3fb950" stroke-width="1.2"/>
+    <rect x="12" y="12" width="212" height="85" rx="6" fill="#1a2230"/>
+    <circle cx="118" cy="54" r="20" fill="rgba(16,185,129,0.2)"/>
+    <text x="118" y="60" text-anchor="middle" font-size="18">🔗</text>
+    <text x="12" y="118" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">死链与孤立文件自动巡检</text>
+    <text x="12" y="136" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">0 个破损死链 · 100% 完整</text>
+    <rect x="150" y="138" width="74" height="18" rx="4" fill="rgba(16,185,129,0.15)"/>
+    <text x="187" y="151" text-anchor="middle" fill="#3fb950" font-size="9">VERIFIED OK</text>
+  </g>
+
+  <!-- Bottom Bar -->
+  <text x="400" y="500" text-anchor="middle" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="11">● NoteFlow 保证所有资产均以相对路径引用，无需联网即可完整离线查看</text>
+</svg>

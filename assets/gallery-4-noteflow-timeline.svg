@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e14" />
+      <stop offset="100%" stop-color="#141924" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" fill="url(#bgGrad4)" rx="16"/>
+  <rect width="798" height="518" x="1" y="1" fill="none" stroke="#252d3d" stroke-width="1.5" rx="15"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#141924" rx="16"/>
+  <rect x="0" y="26" width="800" height="16" fill="#141924"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#252d3d" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#8e95a5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">NoteFlow — 多列瀑布流时间线与标签管理视图</text>
+
+  <!-- Search and Filter Bar -->
+  <g transform="translate(24, 56)">
+    <rect width="460" height="36" rx="18" fill="#1e2430" stroke="#3b82f6" stroke-width="1"/>
+    <text x="18" y="23" fill="#8e95a5" font-family="sans-serif" font-size="13">🔍 检索 1,280+ 篇本地笔记 (FTS5 &lt;10ms 全文即时响应)...</text>
+    <rect x="420" y="8" width="30" height="20" rx="4" fill="#0d1117"/>
+    <text x="435" y="22" text-anchor="middle" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">⌘K</text>
+  </g>
+
+  <!-- Tag Filter Pills -->
+  <g transform="translate(500, 64)" font-family="'JetBrains Mono', monospace" font-size="10">
+    <rect width="64" height="24" rx="12" fill="rgba(59,130,246,0.2)" stroke="#3b82f6"/>
+    <text x="32" y="16" text-anchor="middle" fill="#60a5fa">#ALL (1.2k)</text>
+
+    <rect x="72" width="60" height="24" rx="12" fill="#1e2430" stroke="#30363d"/>
+    <text x="102" y="16" text-anchor="middle" fill="#8b949e">#Agent</text>
+
+    <rect x="140" width="70" height="24" rx="12" fill="#1e2430" stroke="#30363d"/>
+    <text x="175" y="16" text-anchor="middle" fill="#8b949e">#Tauri/Rust</text>
+
+    <rect x="218" width="56" height="24" rx="12" fill="#1e2430" stroke="#30363d"/>
+    <text x="246" y="16" text-anchor="middle" fill="#8b949e">#FastAPI</text>
+  </g>
+
+  <!-- 3 Columns of Waterfall Timeline Cards -->
+  <!-- Col 1 -->
+  <g transform="translate(24, 110)">
+    <rect width="236" height="180" rx="10" fill="#151b26" stroke="#252d3d"/>
+    <text x="16" y="28" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="10">2026-10-16 09:30 · 1.4k字</text>
+    <text x="16" y="52" fill="#f0f6fc" font-family="sans-serif" font-size="14" font-weight="700">Tauri 2 插件体系探秘</text>
+    <text x="16" y="76" fill="#8e95a5" font-family="sans-serif" font-size="11" line-height="1.5">深入分析 Rust 进程间 IPC 通信机制与前端 React 19 事件总线集成...</text>
+    <rect x="16" y="140" width="54" height="20" rx="10" fill="rgba(139,92,246,0.15)"/>
+    <text x="43" y="154" text-anchor="middle" fill="#d2a8ff" font-size="9">#Rust</text>
+    <rect x="76" y="140" width="60" height="20" rx="10" fill="rgba(59,130,246,0.15)"/>
+    <text x="106" y="154" text-anchor="middle" fill="#60a5fa" font-size="9">#Tauri2</text>
+  </g>
+
+  <g transform="translate(24, 305)">
+    <rect width="236" height="185" rx="10" fill="#151b26" stroke="#252d3d"/>
+    <text x="16" y="28" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="10">2026-10-15 19:45 · 820字</text>
+    <text x="16" y="52" fill="#f0f6fc" font-family="sans-serif" font-size="14" font-weight="700">本地优先的数据主权</text>
+    <text x="16" y="76" fill="#8e95a5" font-family="sans-serif" font-size="11">坚持每个笔记都是纯净的 .md 文件，绝不采用私有黑盒存储格式...</text>
+    <rect x="16" y="145" width="70" height="20" rx="10" fill="rgba(16,185,129,0.15)"/>
+    <text x="51" y="159" text-anchor="middle" fill="#3fb950" font-size="9">#LocalFirst</text>
+  </g>
+
+  <!-- Col 2 -->
+  <g transform="translate(282, 110)">
+    <rect width="236" height="230" rx="10" fill="#151b26" stroke="#388bfd" stroke-width="1.2"/>
+    <text x="16" y="28" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">2026-10-14 14:10 · ⭐ 精选</text>
+    <text x="16" y="52" fill="#f0f6fc" font-family="sans-serif" font-size="14" font-weight="700">Multi-Agent 编排与闭环</text>
+    <text x="16" y="76" fill="#8e95a5" font-family="sans-serif" font-size="11">结合东北大学控制工程推免背景，将经典反馈控制与 Agent Loop 进行深度交叉实践...</text>
+    <rect x="16" y="130" width="204" height="48" rx="6" fill="#0d1117" stroke="#21262d"/>
+    <text x="26" y="150" fill="#7ee787" font-family="'JetBrains Mono', monospace" font-size="10">State(t) ──▶ Controller</text>
+    <text x="26" y="168" fill="#7ee787" font-family="'JetBrains Mono', monospace" font-size="10">            ↳ Agent Loop</text>
+    <rect x="16" y="190" width="58" height="20" rx="10" fill="rgba(245,158,11,0.15)"/>
+    <text x="45" y="204" text-anchor="middle" fill="#f59e0b" font-size="9">#Control</text>
+    <rect x="80" y="190" width="56" height="20" rx="10" fill="rgba(59,130,246,0.15)"/>
+    <text x="108" y="204" text-anchor="middle" fill="#60a5fa" font-size="9">#Agent</text>
+  </g>
+
+  <g transform="translate(282, 355)">
+    <rect width="236" height="135" rx="10" fill="#151b26" stroke="#252d3d"/>
+    <text x="16" y="28" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="10">2026-10-13 11:20</text>
+    <text x="16" y="52" fill="#f0f6fc" font-family="sans-serif" font-size="14" font-weight="700">CodeMirror 6 扩展扩展器</text>
+    <text x="16" y="76" fill="#8e95a5" font-family="sans-serif" font-size="11">实现快捷键与 Vim 模式无缝切换。</text>
+    <rect x="16" y="96" width="60" height="20" rx="10" fill="rgba(139,92,246,0.15)"/>
+    <text x="46" y="110" text-anchor="middle" fill="#d2a8ff" font-size="9">#Editor</text>
+  </g>
+
+  <!-- Col 3 -->
+  <g transform="translate(540, 110)">
+    <rect width="236" height="160" rx="10" fill="#151b26" stroke="#252d3d"/>
+    <text x="16" y="28" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="10">2026-10-12 16:50</text>
+    <text x="16" y="52" fill="#f0f6fc" font-family="sans-serif" font-size="14" font-weight="700">VoiceNote 0.18 RTF 压测</text>
+    <text x="16" y="76" fill="#8e95a5" font-family="sans-serif" font-size="11">RTX 4060 平台实测 large-v3-turbo 模型推理，停顿 0.7 秒即时出字验证通过。</text>
+    <rect x="16" y="122" width="70" height="20" rx="10" fill="rgba(16,185,129,0.15)"/>
+    <text x="51" y="136" text-anchor="middle" fill="#3fb950" font-size="9">#VoiceNote</text>
+  </g>
+
+  <g transform="translate(540, 285)">
+    <rect width="236" height="205" rx="10" fill="#151b26" stroke="#252d3d"/>
+    <text x="16" y="28" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="10">2026-10-10 21:00</text>
+    <text x="16" y="52" fill="#f0f6fc" font-family="sans-serif" font-size="14" font-weight="700">TeamFlow G6 知识图谱实践</text>
+    <text x="16" y="76" fill="#8e95a5" font-family="sans-serif" font-size="11">针对课设协作任务与文档关系，设计四维动态演进力导向布局算法，直观反映团队贡献度...</text>
+    <rect x="16" y="165" width="70" height="20" rx="10" fill="rgba(59,130,246,0.15)"/>
+    <text x="51" y="179" text-anchor="middle" fill="#60a5fa" font-size="9">#TeamFlow</text>
+  </g>
+</svg>
