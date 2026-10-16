@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad9" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0c0e16" />
+      <stop offset="100%" stop-color="#141826" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" fill="url(#bgGrad9)" rx="16"/>
+  <rect width="798" height="518" x="1" y="1" fill="none" stroke="#252d3d" stroke-width="1.5" rx="15"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#141826" rx="16"/>
+  <rect x="0" y="26" width="800" height="16" fill="#141826"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#252d3d" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#8e95a5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">TeamFlow — 内置 AI 项目管家与受限指令白名单控制中心</text>
+
+  <!-- Left Sidebar: Multi-LLM Model Router -->
+  <rect x="24" y="60" width="240" height="436" rx="8" fill="#111520" stroke="#252d3d"/>
+  <text x="40" y="90" fill="#f0f6fc" font-family="-apple-system, sans-serif" font-size="14" font-weight="700">多模型路由与接入</text>
+
+  <!-- Model Item 1: Active -->
+  <g transform="translate(36, 110)">
+    <rect width="216" height="54" rx="6" fill="#1b2438" stroke="#388bfd" stroke-width="1.2"/>
+    <text x="12" y="22" fill="#58a6ff" font-family="sans-serif" font-size="12" font-weight="700">DeepSeek-V3 / R1</text>
+    <text x="12" y="40" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">代码与规划 · 延迟: 140ms</text>
+    <circle cx="198" cy="27" r="4" fill="#3fb950"/>
+  </g>
+
+  <!-- Model Item 2 -->
+  <g transform="translate(36, 174)">
+    <rect width="216" height="54" rx="6" fill="#151b28" stroke="#252d3d"/>
+    <text x="12" y="22" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">通义千问 Qwen-2.5</text>
+    <text x="12" y="40" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">长文档提炼 · 待命就绪</text>
+    <circle cx="198" cy="27" r="4" fill="#8e95a5"/>
+  </g>
+
+  <!-- Model Item 3 -->
+  <g transform="translate(36, 238)">
+    <rect width="216" height="54" rx="6" fill="#151b28" stroke="#252d3d"/>
+    <text x="12" y="22" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">OpenAI GPT-4o-mini</text>
+    <text x="12" y="40" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">复杂推理备用 · 待命就绪</text>
+    <circle cx="198" cy="27" r="4" fill="#8e95a5"/>
+  </g>
+
+  <!-- Security Whitelist Rules Box in Sidebar -->
+  <g transform="translate(36, 310)">
+    <rect width="216" height="166" rx="6" fill="#161b28" stroke="#252d3d"/>
+    <text x="12" y="22" fill="#d2a8ff" font-family="sans-serif" font-size="11" font-weight="700">🛡️ 执行动作安全白名单</text>
+    <text x="12" y="42" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">✓ create_task()</text>
+    <text x="12" y="60" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">✓ update_milestone()</text>
+    <text x="12" y="78" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">✓ generate_weekly_report()</text>
+    <text x="12" y="96" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">✓ calc_contributions()</text>
+    <line x1="12" y1="108" x2="204" y2="108" stroke="#252d3d"/>
+    <text x="12" y="126" fill="#ff7b72" font-family="'JetBrains Mono', monospace" font-size="10">✗ drop_table() [BLOCKED]</text>
+    <text x="12" y="144" fill="#ff7b72" font-family="'JetBrains Mono', monospace" font-size="10">✗ delete_repo() [BLOCKED]</text>
+  </g>
+
+  <!-- Right Panel: AI Interactive Chat Stream -->
+  <rect x="280" y="60" width="496" height="436" rx="8" fill="#111520" stroke="#252d3d"/>
+
+  <!-- Chat Header -->
+  <rect x="280" y="60" width="496" height="36" rx="8" fill="#161c28"/>
+  <rect x="280" y="86" width="496" height="10" fill="#161c28"/>
+  <circle cx="304" cy="78" r="4" fill="#10b981"/>
+  <text x="316" y="82" fill="#f0f6fc" font-family="sans-serif" font-size="12" font-weight="700">TeamFlow Copilot · WebSocket 实时流式会话</text>
+
+  <!-- Chat Message 1: User -->
+  <g transform="translate(304, 115)">
+    <text x="0" y="0" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="10">谢雨航 (组长) · 10:42</text>
+    <rect x="0" y="8" width="448" height="42" rx="6" fill="#1a2336" stroke="#2b3b5c"/>
+    <text x="14" y="34" fill="#f0f6fc" font-family="sans-serif" font-size="12">“分析一下当前项目的整体进度，识别滞后风险，并生成本周协同总结。”</text>
+  </g>
+
+  <!-- Chat Message 2: AI Assistant Response -->
+  <g transform="translate(304, 185)">
+    <text x="0" y="0" fill="#d2a8ff" font-family="'JetBrains Mono', monospace" font-size="10">🤖 TeamFlow Copilot (DeepSeek-V3) · 10:42:01</text>
+    <rect x="0" y="8" width="448" height="230" rx="6" fill="#151b26" stroke="#388bfd" stroke-width="1"/>
+    
+    <g transform="translate(14, 28)" font-family="sans-serif" font-size="12">
+      <text x="0" y="0" fill="#58a6ff" font-weight="700">正在调用白名单函数: calc_contributions() 与 audit_events()...</text>
+      
+      <!-- Whitelist badge -->
+      <rect x="0" y="10" width="220" height="20" rx="4" fill="rgba(16,185,129,0.15)" stroke="#10b981"/>
+      <text x="8" y="24" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10">✓ Function Call Verified Whitelist</text>
+
+      <text x="0" y="52" fill="#c9d1d9" font-weight="600">📊 项目当前综合状态：</text>
+      <text x="0" y="72" fill="#8e95a5">• 总体进度达成 86.4%，处于安全周期内，无阻塞级滞后风险。</text>
+      <text x="0" y="92" fill="#8e95a5">• 张同学的数据库分库方案已列入待办，建议在 10-18 前完成评审。</text>
+      <text x="0" y="112" fill="#8e95a5">• 谢雨航主导的 AntV G6 图谱与 AI 助手模块活跃度占比 54.2%。</text>
+
+      <!-- Action Proposal -->
+      <rect x="0" y="126" width="420" height="56" rx="6" fill="#0d1117" stroke="#252d3d"/>
+      <text x="12" y="146" fill="#f59e0b" font-weight="700">💡 智能建议操作：</text>
+      <text x="12" y="166" fill="#c9d1d9">已为您自动拟定《第6周课设协同周报.md》，点击可一键推入文档库。</text>
+    </g>
+  </g>
+
+  <!-- Input Bar Bottom -->
+  <g transform="translate(304, 442)">
+    <rect width="448" height="38" rx="8" fill="#161c28" stroke="#30363d"/>
+    <text x="16" y="24" fill="#6e7681" font-family="sans-serif" font-size="12">向 TeamFlow AI 助手发送指令（如：指派任务、更新排期、统计工时）...</text>
+    <rect x="388" y="7" width="50" height="24" rx="4" fill="#388bfd"/>
+    <text x="413" y="23" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="11" font-weight="700">发送</text>
+  </g>
+</svg>

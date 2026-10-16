@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14" />
+      <stop offset="100%" stop-color="#121722" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="520" fill="url(#bgGrad7)" rx="16"/>
+  <rect width="798" height="518" x="1" y="1" fill="none" stroke="#252d3d" stroke-width="1.5" rx="15"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#121722" rx="16"/>
+  <rect x="0" y="26" width="800" height="16" fill="#121722"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#252d3d" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#8e95a5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">TeamFlow — 高校课设协同管理主看板 (Vue 3 + FastAPI + WebSocket)</text>
+
+  <!-- Top Metrics Bar -->
+  <g transform="translate(24, 58)">
+    <rect width="752" height="66" rx="8" fill="#161c28" stroke="#252d3d"/>
+
+    <g transform="translate(20, 14)">
+      <text x="0" y="16" fill="#8e95a5" font-size="11">活跃课设项目</text>
+      <text x="0" y="42" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">4 <tspan font-size="11" fill="#8e95a5">个进行中</tspan></text>
+    </g>
+
+    <line x1="160" y1="12" x2="160" y2="54" stroke="#252d3d"/>
+
+    <g transform="translate(180, 14)">
+      <text x="0" y="16" fill="#8e95a5" font-size="11">任务总进度与交付</text>
+      <text x="0" y="42" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">86.4% <tspan font-size="11" fill="#8e95a5">准时交付</tspan></text>
+    </g>
+
+    <line x1="360" y1="12" x2="360" y2="54" stroke="#252d3d"/>
+
+    <g transform="translate(380, 14)">
+      <text x="0" y="16" fill="#8e95a5" font-size="11">WebSocket 协作事件</text>
+      <text x="0" y="42" fill="#d2a8ff" font-family="'JetBrains Mono', monospace" font-size="20" font-weight="700">1,920 <tspan font-size="11" fill="#8e95a5">已审计事件</tspan></text>
+    </g>
+
+    <line x1="560" y1="12" x2="560" y2="54" stroke="#252d3d"/>
+
+    <g transform="translate(580, 14)">
+      <text x="0" y="16" fill="#8e95a5" font-size="11">AI 助手状态</text>
+      <text x="0" y="42" fill="#10b981" font-family="'JetBrains Mono', monospace" font-size="16" font-weight="700">🟢 在线协同中</text>
+    </g>
+  </g>
+
+  <!-- Kanban Columns -->
+  <!-- Col 1: To Do -->
+  <g transform="translate(24, 138)">
+    <rect width="236" height="360" rx="8" fill="#121724" stroke="#212634"/>
+    <rect x="0" y="0" width="236" height="34" rx="8" fill="#181f30"/>
+    <rect x="0" y="24" width="236" height="10" fill="#181f30"/>
+    <circle cx="16" cy="17" r="4" fill="#8e95a5"/>
+    <text x="28" y="21" fill="#f0f6fc" font-size="12" font-weight="700">待办任务 (To Do · 3)</text>
+
+    <!-- Card 1 -->
+    <g transform="translate(12, 46)">
+      <rect width="212" height="88" rx="6" fill="#181f30" stroke="#252d3d"/>
+      <text x="12" y="24" fill="#f0f6fc" font-size="12" font-weight="600">数据库分库设计方案编写</text>
+      <text x="12" y="44" fill="#8e95a5" font-size="10">负责人: 张同学 · 优先级: P1</text>
+      <rect x="12" y="56" width="60" height="18" rx="4" fill="rgba(59,130,246,0.15)"/>
+      <text x="42" y="69" text-anchor="middle" fill="#60a5fa" font-size="9">软件工程</text>
+    </g>
+
+    <!-- Card 2 -->
+    <g transform="translate(12, 146)">
+      <rect width="212" height="88" rx="6" fill="#181f30" stroke="#252d3d"/>
+      <text x="12" y="24" fill="#f0f6fc" font-size="12" font-weight="600">前端组件单元测试覆盖</text>
+      <text x="12" y="44" fill="#8e95a5" font-size="10">负责人: 李同学 · 优先级: P2</text>
+      <rect x="12" y="56" width="60" height="18" rx="4" fill="rgba(16,185,129,0.15)"/>
+      <text x="42" y="69" text-anchor="middle" fill="#3fb950" font-size="9">Vitest 覆盖</text>
+    </g>
+  </g>
+
+  <!-- Col 2: In Progress -->
+  <g transform="translate(282, 138)">
+    <rect width="236" height="360" rx="8" fill="#121724" stroke="#388bfd" stroke-width="1.2"/>
+    <rect x="0" y="0" width="236" height="34" rx="8" fill="#181f30"/>
+    <rect x="0" y="24" width="236" height="10" fill="#181f30"/>
+    <circle cx="16" cy="17" r="4" fill="#388bfd"/>
+    <text x="28" y="21" fill="#58a6ff" font-size="12" font-weight="700">进行中 (In Progress · 2)</text>
+
+    <!-- Card 1 -->
+    <g transform="translate(12, 46)">
+      <rect width="212" height="110" rx="6" fill="#181f30" stroke="#388bfd"/>
+      <text x="12" y="24" fill="#f0f6fc" font-size="12" font-weight="700">AntV G6 动态关系拓扑联调</text>
+      <text x="12" y="44" fill="#8e95a5" font-size="10">负责人: 谢雨航 · 优先级: 核心</text>
+      <text x="12" y="64" fill="#58a6ff" font-size="10">● WebSocket 协作事件实时推送中</text>
+      <rect x="12" y="78" width="64" height="18" rx="4" fill="rgba(56,139,253,0.2)"/>
+      <text x="44" y="91" text-anchor="middle" fill="#58a6ff" font-size="9">G6 图谱</text>
+    </g>
+
+    <!-- Card 2 -->
+    <g transform="translate(12, 168)">
+      <rect width="212" height="98" rx="6" fill="#181f30" stroke="#252d3d"/>
+      <text x="12" y="24" fill="#f0f6fc" font-size="12" font-weight="600">AI 智能助手动作白名单拦截</text>
+      <text x="12" y="44" fill="#8e95a5" font-size="10">负责人: 谢雨航 · 安全加固</text>
+      <rect x="12" y="66" width="70" height="18" rx="4" fill="rgba(139,92,246,0.15)"/>
+      <text x="47" y="79" text-anchor="middle" fill="#d2a8ff" font-size="9">AI Agent</text>
+    </g>
+  </g>
+
+  <!-- Col 3: Done -->
+  <g transform="translate(540, 138)">
+    <rect width="236" height="360" rx="8" fill="#121724" stroke="#212634"/>
+    <rect x="0" y="0" width="236" height="34" rx="8" fill="#181f30"/>
+    <rect x="0" y="24" width="236" height="10" fill="#181f30"/>
+    <circle cx="16" cy="17" r="4" fill="#10b981"/>
+    <text x="28" y="21" fill="#3fb950" font-size="12" font-weight="700">已完成 (Done · 14)</text>
+
+    <!-- Card 1 -->
+    <g transform="translate(12, 46)">
+      <rect width="212" height="78" rx="6" fill="#181f30" stroke="#252d3d"/>
+      <text x="12" y="24" fill="#f0f6fc" font-size="12" font-weight="600">FastAPI 核心协作接口设计</text>
+      <text x="12" y="44" fill="#3fb950" font-size="10">✓ 审计链条事件全量落盘完成</text>
+      <rect x="12" y="52" width="60" height="18" rx="4" fill="rgba(16,185,129,0.15)"/>
+      <text x="42" y="65" text-anchor="middle" fill="#3fb950" font-size="9">FastAPI</text>
+    </g>
+
+    <!-- Card 2 -->
+    <g transform="translate(12, 136)">
+      <rect width="212" height="78" rx="6" fill="#181f30" stroke="#252d3d"/>
+      <text x="12" y="24" fill="#f0f6fc" font-size="12" font-weight="600">多维贡献度雷达画像生成</text>
+      <text x="12" y="44" fill="#3fb950" font-size="10">✓ 综合活跃度算法校验通过</text>
+      <rect x="12" y="52" width="60" height="18" rx="4" fill="rgba(245,158,11,0.15)"/>
+      <text x="42" y="65" text-anchor="middle" fill="#f59e0b" font-size="9">贡献分析</text>
+    </g>
+  </g>
+</svg>

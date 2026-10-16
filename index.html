@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>谢雨航 (yuhang234) | AI Agent 工程师 · 东北大学控制工程推免研究生</title>
+  <meta name="description" content="谢雨航 (yuhang234) 个人主页 · 专注 AI Agent 方向。河北农业大学计算机科学与技术 (class of 2023) · 推免保送东北大学控制工程硕士研究生。代表作：VoiceNote、NoteFlow、TeamFlow。">
+  <meta name="keywords" content="谢雨航, yuhang234, AI Agent, Multi-Agent, 本地优先, Local-First, VoiceNote, NoteFlow, TeamFlow, 河北农业大学, 东北大学, 控制工程, 个人主页, Portfolio">
+  <meta name="author" content="谢雨航">
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://yuhang234.github.io/">
+  <meta property="og:title" content="谢雨航 | AI Agent 架构与系统工程实践">
+  <meta property="og:description" content="专注 AI Agent 方向 · 河北农业大学计算机科学与技术 (2023级) · 推免保送东北大学控制工程硕士研究生。代表作：VoiceNote、NoteFlow、TeamFlow。">
+
+  <!-- Favicon: Inline SVG Data URI -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- External CDN Dependencies: Google Fonts (Inter, JetBrains Mono, Noto Sans SC). Page degrades gracefully to system font fallbacks if unreachable. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Cursor Glow Follower -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Floating Navigation -->
+  <nav class="floating-nav" id="floatingNav" aria-label="快捷导航">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">YH</a>
+      <div class="nav-links">
+        <a href="#about" data-section="about">关于</a>
+        <a href="#skills" data-section="skills">技能</a>
+        <a href="#projects" data-section="projects">项目</a>
+        <a href="#gallery" data-section="gallery">图鉴</a>
+        <a href="#achievements" data-section="achievements">成就</a>
+        <a href="#contact" data-section="contact">联系</a>
+      </div>
+      <a href="https://github.com/yuhang234" target="_blank" rel="noopener noreferrer" class="nav-github" aria-label="GitHub Profile">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+      </a>
+    </div>
+  </nav>
+
+  <!-- ==================== HERO ==================== -->
+  <section class="hero" id="hero">
+    <div class="hero-bg">
+      <div class="grid-bg"></div>
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+      <div class="particle-field" id="particleField"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge animate-in">
+        <span class="badge-dot"></span>
+        <span>河北农业大学计科（本科 2023 级） · 推免保送东北大学控制工程（硕士研究生）</span>
+      </div>
+      <h1 class="hero-title animate-in delay-1">
+        <span class="title-line">你好，我是</span>
+        <span class="title-name">谢雨航 / yuhang234</span>
+      </h1>
+      <p class="hero-subtitle animate-in delay-2">
+        <span class="typing-text" id="typingText"></span>
+        <span class="typing-cursor">|</span>
+      </p>
+      <div class="hero-stats animate-in delay-3">
+        <div class="stat-item">
+          <span class="stat-number" id="statRepos">--</span>
+          <span class="stat-label">GitHub Repos</span>
+          <span class="stat-live">LIVE</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="statProjects">3</span>
+          <span class="stat-label">精选旗舰系统</span>
+          <span class="stat-live" style="background: rgba(59,130,246,0.15); color: var(--accent-blue-light); border-color: rgba(59,130,246,0.3);">FLAGSHIP</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" id="statLocalFirst">100%</span>
+          <span class="stat-label">本地优先与自主可控</span>
+          <span class="stat-live" style="background: rgba(139,92,246,0.15); color: #d2a8ff; border-color: rgba(139,92,246,0.3);">OFFLINE</span>
+        </div>
+      </div>
+      <div class="hero-actions animate-in delay-4">
+        <a href="#projects" class="btn btn-primary">
+          <span>探索精选系统</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+        </a>
+        <a href="#about" class="btn btn-secondary"><span>关于与履历</span></a>
+        <a href="https://github.com/yuhang234" target="_blank" rel="noopener noreferrer" class="btn btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </div>
+    </div>
+    <div class="scroll-indicator animate-in delay-5">
+      <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
+      <span>向下滚动探索</span>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT ==================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">ABOUT ME</span>
+        <h2 class="section-title">关于我</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card about-intro reveal">
+          <div class="about-avatar">
+            <img src="https://avatars.githubusercontent.com/u/162531096?v=4" alt="谢雨航" loading="lazy">
+            <div class="avatar-ring"></div>
+          </div>
+          <div class="about-text">
+            <h3>AI Agent 工程师 & 独立系统研发者</h3>
+            <p>本科就读于<strong>河北农业大学计算机科学与技术专业</strong>（class of 2023），以优异成绩获得<strong>免试攻读硕士研究生推荐（推免保送）</strong>，已被<strong>东北大学控制工程专业</strong>录取。</p>
+            <p>长期深耕 <strong>AI Agent 智能体架构</strong>、<strong>本地优先（Local-First）桌面端应用</strong>与<strong>分布式协同系统</strong>的落地研发。坚持“真实问题导向、稳定数据底座、轻量自主可控”的工程理念，独立主导构建了从端侧实时语音转录（VoiceNote）、高性能离线知识图谱笔记（NoteFlow）到多智能体课设协作平台（TeamFlow）的核心项目矩阵。</p>
+            <div class="about-tags">
+              <span class="tag">🏛️ 河北农业大学计科 (2023级)</span>
+              <span class="tag">🎓 推免保送东北大学控制工程</span>
+              <span class="tag">🤖 专注 AI Agent</span>
+              <span class="tag">🛡️ 本地优先 (Local-First)</span>
+              <span class="tag">⚡ 跨端桌面系统工程</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-cards-row">
+          <div class="about-card about-education reveal">
+            <div class="card-icon">🎓</div>
+            <h4>教育背景</h4>
+            <!-- Undergraduate first, 河北农业大学 first; Postgraduate second, 东北大学 second -->
+            <div class="education-item">
+              <span class="edu-school">河北农业大学 · 计算机科学与技术</span>
+              <span class="edu-degree">工学学士（本科 · 2023 级）</span>
+            </div>
+            <div class="education-item">
+              <span class="edu-school">东北大学 · 控制工程</span>
+              <span class="edu-degree">硕士研究生（推免保送）</span>
+            </div>
+          </div>
+          <div class="about-card about-focus reveal">
+            <div class="card-icon">🎯</div>
+            <h4>当前研究与技术聚焦</h4>
+            <ul class="focus-list">
+              <li>Multi-Agent 多智能体协同编排与上下文管理</li>
+              <li>本地优先（Local-First）离线数据架构与高效索引</li>
+              <li>端侧 AI 硬件加速（CUDA / ONNX / Whisper）</li>
+              <li>复杂知识图谱与全栈实时通信工程</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SKILLS ==================== -->
+  <section class="section section-dark" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">TECH STACK</span>
+        <h2 class="section-title">技术栈与技能体系</h2>
+        <p class="section-desc">专注端侧智能加速、本地优先离线存储与多智能体系统工程</p>
+      </div>
+      <div class="skills-grid">
+        <!-- 1. 编程语言 -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <span class="skill-icon">🐍</span>
+            <h3>编程语言 (Languages)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip skill-expert">Python</span>
+            <span class="skill-chip skill-proficient">TypeScript</span>
+            <span class="skill-chip skill-proficient">JavaScript</span>
+            <span class="skill-chip skill-proficient">Rust</span>
+            <span class="skill-chip skill-proficient">SQL / SQLite</span>
+            <span class="skill-chip skill-familiar">C / C++</span>
+          </div>
+        </div>
+
+        <!-- 2. AI Agent 与大模型架构 -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <span class="skill-icon">🤖</span>
+            <h3>AI Agent 与大模型 (AI &amp; LLM)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip skill-expert">Multi-Agent 编排</span>
+            <span class="skill-chip skill-expert">Tool Calling</span>
+            <span class="skill-chip skill-expert">Prompt Engineering</span>
+            <span class="skill-chip skill-proficient">ReAct 模式</span>
+            <span class="skill-chip skill-proficient">LangChain / LangGraph</span>
+            <span class="skill-chip skill-proficient">RAG 检索增强</span>
+            <span class="skill-chip skill-proficient">多模型路由</span>
+          </div>
+        </div>
+
+        <!-- 3. 语音与端侧 AI 加速 -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <span class="skill-icon">🎙️</span>
+            <h3>语音与端侧加速 (Speech &amp; Edge)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip skill-expert">faster-whisper</span>
+            <span class="skill-chip skill-expert">Silero VAD</span>
+            <span class="skill-chip skill-proficient">NVIDIA CUDA 加速</span>
+            <span class="skill-chip skill-proficient">ONNX Runtime</span>
+            <span class="skill-chip skill-proficient">FLAC / 音频处理</span>
+            <span class="skill-chip skill-proficient">YOLOv11 视觉检测</span>
+          </div>
+        </div>
+
+        <!-- 4. 桌面应用与前端体系 -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <span class="skill-icon">🖥️</span>
+            <h3>桌面应用与前端 (Desktop &amp; UI)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip skill-expert">Tauri 2 (Rust+Web)</span>
+            <span class="skill-chip skill-proficient">React 19</span>
+            <span class="skill-chip skill-proficient">Vue 3</span>
+            <span class="skill-chip skill-proficient">PySide6 / Qt</span>
+            <span class="skill-chip skill-proficient">CodeMirror 6</span>
+            <span class="skill-chip skill-proficient">AntV G6 图谱</span>
+            <span class="skill-chip skill-proficient">Tailwind CSS / Vite</span>
+          </div>
+        </div>
+
+        <!-- 5. 后端架构与本地存储 -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <span class="skill-icon">🗄️</span>
+            <h3>后端架构与存储 (Backend &amp; Data)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip skill-expert">FastAPI</span>
+            <span class="skill-chip skill-expert">SQLite FTS5 全文索引</span>
+            <span class="skill-chip skill-expert">Local-First 架构</span>
+            <span class="skill-chip skill-proficient">WebSocket 实时流</span>
+            <span class="skill-chip skill-proficient">SQLAlchemy / Pydantic</span>
+            <span class="skill-chip skill-proficient">RESTful API 设计</span>
+          </div>
+        </div>
+
+        <!-- 6. 系统工程与开发工具 -->
+        <div class="skill-category reveal">
+          <div class="skill-category-header">
+            <span class="skill-icon">🛠️</span>
+            <h3>系统工程与工具 (Tools &amp; DevOps)</h3>
+          </div>
+          <div class="skill-items">
+            <span class="skill-chip skill-expert">Git 版本控制</span>
+            <span class="skill-chip skill-expert">Windows 原生 API / 托盘</span>
+            <span class="skill-chip skill-proficient">Linux 环境</span>
+            <span class="skill-chip skill-proficient">Docker 容器化</span>
+            <span class="skill-chip skill-proficient">自动化自检 (pytest)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="skill-legend reveal">
+        <div class="legend-item"><span class="legend-dot expert"></span><span>精通 (Expert · 内核与实战落地)</span></div>
+        <div class="legend-item"><span class="legend-dot proficient"></span><span>熟练 (Proficient · 独立研发交付)</span></div>
+        <div class="legend-item"><span class="legend-dot familiar"></span><span>熟悉 (Familiar · 熟练运用维护)</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PROJECTS ==================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">FEATURED PROJECTS</span>
+        <h2 class="section-title">精选项目</h2>
+        <p class="section-desc">专注 AI Agent、本地优先与系统工程实践，从端侧智能到全栈协同</p>
+      </div>
+
+      <div class="projects-showcase">
+
+        <!-- 旗舰项目 1: VoiceNote -->
+        <div class="showcase-card reveal">
+          <div class="showcase-image showcase-image-code">
+            <div class="voicenote-visual">
+              <div class="vn-flow">
+                <div class="vn-step vn-step-1">
+                  <span class="vn-icon">🎙️</span>
+                  <div class="vn-content">
+                    <div class="vn-title">麦克风实时音频输入</div>
+                    <div class="vn-sub">16kHz PCM · 常驻系统托盘静默监听</div>
+                  </div>
+                  <span class="vn-arrow">↓</span>
+                </div>
+                <div class="vn-step vn-step-2">
+                  <span class="vn-icon">⚡</span>
+                  <div class="vn-content">
+                    <div class="vn-title">Silero VAD (本地 CPU 零开销检测)</div>
+                    <div class="vn-sub">毫秒级端点检测 · 静音直接丢弃 · 0% GPU 占用</div>
+                  </div>
+                  <span class="vn-arrow">↓</span>
+                </div>
+                <div class="vn-step vn-step-3">
+                  <span class="vn-icon">🚀</span>
+                  <div class="vn-content">
+                    <div class="vn-title">faster-whisper (本地 CUDA 加速推理)</div>
+                    <div class="vn-sub">large-v3-turbo · RTF 0.18 · 停顿 0.7 秒即时出字</div>
+                  </div>
+                  <span class="vn-arrow">↓</span>
+                </div>
+                <div class="vn-step vn-step-4">
+                  <span class="vn-icon">📁</span>
+                  <div class="vn-content">
+                    <div class="vn-title">Markdown + FLAC 本地归档</div>
+                    <div class="vn-sub">按日期生成 YYYY-MM-DD.md · 支持原声回放</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-badge">🏆 旗舰项目 01</span>
+              <span class="showcase-lang">Python 3.13 · PySide6</span>
+            </div>
+            <h3>VoiceNote — 离线语音记录引擎</h3>
+            <p class="showcase-quote">“想到什么直接说 —— Windows 桌面语音记录工具，启动即自动监听，本地离线转文字并按日期归档。”</p>
+            <ul class="showcase-highlights">
+              <li><strong>零唤醒交互成本：</strong>常驻 Windows 系统托盘静默监听，无需任何多余点击即可随时捕捉灵感。</li>
+              <li><strong>高效双阶流水线：</strong>轻量 Silero VAD（本地 CPU）毫秒级过滤静音，触发人声后唤醒 faster-whisper（GPU CUDA）。</li>
+              <li><strong>极致端侧性能基准：</strong>实测 large-v3-turbo 在 RTX 4060 CUDA 上 <strong>RTF 达到 0.18</strong>（~5.5 倍实时识别），停顿约 0.7 秒出字。</li>
+              <li><strong>无损本地持久化：</strong>每日自动生成独立 Markdown 记录文件，配套 FLAC 无损音频，点击即可原声回放。</li>
+            </ul>
+            <div class="showcase-kpis">
+              <div class="kpi-item"><span class="kpi-num">0.18</span><span class="kpi-label">CUDA RTF 加速</span></div>
+              <div class="kpi-item"><span class="kpi-num">0.7s</span><span class="kpi-label">停顿断句延迟</span></div>
+              <div class="kpi-item"><span class="kpi-num">100%</span><span class="kpi-label">完全本地离线</span></div>
+            </div>
+            <div class="project-tech">
+              <span>Python 3.13</span><span>faster-whisper</span><span>Silero VAD</span><span>PySide6</span><span>CUDA</span><span>FLAC</span>
+            </div>
+            <a href="https://github.com/yuhang234/VoiceNote" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">
+              → github.com/yuhang234/VoiceNote
+            </a>
+          </div>
+        </div>
+
+        <!-- 旗舰项目 2: NoteFlow -->
+        <div class="showcase-card showcase-card-reverse reveal">
+          <div class="showcase-image showcase-image-code">
+            <div class="noteflow-visual">
+              <div class="nf-flow">
+                <div class="nf-top-box">
+                  <span class="nf-top-left">💻 React 19 + CodeMirror 6 编辑区</span>
+                  <span class="nf-ipc">◀── Tauri IPC ──▶</span>
+                  <span class="nf-top-right">🦀 Rust 原生核心</span>
+                </div>
+                <div class="nf-arrow-split">
+                  │ 外部变动系统监听 (Notify Engine)<br>
+                  ┌────────────────────────┴────────────────────────┐
+                </div>
+                <div class="nf-bottom-row">
+                  <div class="nf-node nf-source">
+                    <div class="nf-node-title">📄 权威数据源</div>
+                    <div class="nf-node-sub">纯本地 .md 独立文件<br>外部编辑双向无损热同步</div>
+                  </div>
+                  <div class="nf-node nf-index">
+                    <div class="nf-node-title">🔍 派生检索与缓存</div>
+                    <div class="nf-node-sub">SQLite FTS5 引擎<br>&lt; 10ms 万级全文检索</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-badge">🏆 旗舰项目 02</span>
+              <span class="showcase-lang">Tauri 2 · Rust · React 19</span>
+            </div>
+            <h3>NoteFlow — 本地优先 Markdown 桌面系统</h3>
+            <p class="showcase-quote">“本地优先（Local-First）Markdown 桌面笔记系统。以纯本地 .md 文件为唯一权威数据源，支持 SQLite FTS5 全文检索、多维时间线/日历/地图视图与完整离线运行。”</p>
+            <ul class="showcase-highlights">
+              <li><strong>严格的 Local-First 准则：</strong>拒绝封闭数据库绑定，每篇笔记真实对应独立 .md 文件，完全兼容外部编辑器且双向热同步。</li>
+              <li><strong>双核存储与毫秒级索引：</strong>数据库仅作为派生缓存，集成 <strong>SQLite FTS5 引擎</strong>实现万级笔记的亚毫秒级全文模糊搜索。</li>
+              <li><strong>现代高生产力渲染栈：</strong>基于 React 19 + CodeMirror 6 双栏实时渲染，原生集成 LaTeX 公式离线渲染与本地多媒体资产库。</li>
+              <li><strong>多维时空回溯：</strong>内置瀑布流多列时间线、月度日历分布、多层级标签网络与近 120 天写作热力图。</li>
+            </ul>
+            <div class="showcase-kpis">
+              <div class="kpi-item"><span class="kpi-num">&lt;10ms</span><span class="kpi-label">FTS5 全文检索</span></div>
+              <div class="kpi-item"><span class="kpi-num">Zero-Loss</span><span class="kpi-label">外部变动零丢失</span></div>
+              <div class="kpi-item"><span class="kpi-num">100%</span><span class="kpi-label">完全离线自主</span></div>
+            </div>
+            <div class="project-tech">
+              <span>Tauri 2</span><span>Rust</span><span>React 19</span><span>TypeScript</span><span>SQLite FTS5</span><span>CodeMirror 6</span>
+            </div>
+            <a href="https://github.com/yuhang234/NoteFlow" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">
+              → github.com/yuhang234/NoteFlow
+            </a>
+          </div>
+        </div>
+
+        <!-- 旗舰项目 3: TeamFlow -->
+        <div class="showcase-card reveal">
+          <div class="showcase-image showcase-image-code">
+            <div class="teamflow-visual">
+              <div class="tf-flow">
+                <div class="tf-top-row">
+                  <div class="tf-box tf-ui">
+                    <div style="font-size:12px; font-weight:700; color:var(--text-primary);">🖥️ Vue 3 协作看板</div>
+                    <div style="font-size:10px; color:var(--text-tertiary);">AntV G6 动态关系拓扑图谱</div>
+                  </div>
+                  <div class="tf-ws">
+                    ◀── WebSocket ──▶<br>
+                    全双工实时事件流
+                  </div>
+                  <div class="tf-box tf-api">
+                    <div style="font-size:12px; font-weight:700; color:var(--text-primary);">⚡ FastAPI 核心引擎</div>
+                    <div style="font-size:10px; color:var(--text-tertiary);">协作审计链条与贡献分析</div>
+                  </div>
+                </div>
+                <div class="tf-arrow-down">│ 受限动作白名单机制</div>
+                <div class="tf-ai-box">
+                  <div class="tf-ai-title">🤖 TeamFlow AI 智能助手</div>
+                  <div class="tf-ai-sub">白名单指令执行 · 项目自动排期 · 多模型无缝切换 (OpenAI / DeepSeek / 通义千问)</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="showcase-info">
+            <div class="showcase-meta">
+              <span class="showcase-badge">🏆 旗舰项目 03</span>
+              <span class="showcase-lang">Vue 3 · FastAPI · WebSocket</span>
+            </div>
+            <h3>TeamFlow — 高校课设协同与 AI 助手平台</h3>
+            <p class="showcase-quote">“面向高校课程设计与软件工程课设的团队协作平台：以项目为中心、任务为主线、消息为触发、协作事件为审计依据，内置 TeamFlow AI 智能助手。”</p>
+            <ul class="showcase-highlights">
+              <li><strong>闭环协作与全链路追踪：</strong>覆盖看板排期、里程碑追踪、文档协同与工时交付，全流程事件落盘形成可靠审计链。</li>
+              <li><strong>AntV G6 动态关系拓扑：</strong>深度可视化“项目—任务—成员—交付文档”之间的多维依赖与演进网络。</li>
+              <li><strong>多维贡献度与风险预警：</strong>量化成员代码、任务交付与协作活跃度，自动生成雷达画像，智能预警滞后风险。</li>
+              <li><strong>TeamFlow AI 助手服务：</strong>通过 WebSocket 提供流式交互，自动化周报生成与项目规划；采用受限白名单确保指令安全。</li>
+            </ul>
+            <div class="showcase-kpis">
+              <div class="kpi-item"><span class="kpi-num">WebSocket</span><span class="kpi-label">全双工实时协作</span></div>
+              <div class="kpi-item"><span class="kpi-num">AntV G6</span><span class="kpi-label">四维协作图谱</span></div>
+              <div class="kpi-item"><span class="kpi-num">Multi-LLM</span><span class="kpi-label">白名单安全防卫</span></div>
+            </div>
+            <div class="project-tech">
+              <span>FastAPI</span><span>Vue 3</span><span>WebSocket</span><span>AntV G6</span><span>AI Assistant</span><span>SQLAlchemy</span>
+            </div>
+            <a href="https://github.com/yuhang234/TeamFlow" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">
+              → github.com/yuhang234/TeamFlow
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 紧凑开源项目网格 (4 Cards) -->
+      <h3 class="subsection-title">更多开源与技术实践</h3>
+      <div class="projects-grid">
+        <!-- 1. ClassEye-Y11 -->
+        <div class="project-card reveal" data-repo="ClassEye-Y11">
+          <div class="project-card-header">
+            <span class="project-card-icon">👁️</span>
+            <span class="card-stars">YOLOv11</span>
+          </div>
+          <h3>ClassEye-Y11 (慧眼课堂)</h3>
+          <p>基于 YOLOv11 深度学习模型的智能课堂教学行为评估与视觉分析系统，实现学生听课状态与专注度自动化评估。</p>
+          <div class="project-tech">
+            <span>Python</span><span>YOLOv11</span><span>视觉分析</span>
+          </div>
+          <a href="https://github.com/yuhang234/ClassEye-Y11" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">→ GitHub 仓库</a>
+        </div>
+
+        <!-- 2. MARL-ParallelSim -->
+        <div class="project-card reveal" data-repo="MARL-ParallelSim">
+          <div class="project-card-header">
+            <span class="project-card-icon">🤖</span>
+            <span class="card-stars">Multi-Agent</span>
+          </div>
+          <h3>MARL-ParallelSim</h3>
+          <p>多智能体强化学习（MARL）大规模并行仿真与环境演练平台，探索多智能体协作策略与动态环境交互。</p>
+          <div class="project-tech">
+            <span>Python</span><span>RL</span><span>仿真环境</span>
+          </div>
+          <a href="https://github.com/yuhang234/MARL-ParallelSim" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">→ GitHub 仓库</a>
+        </div>
+
+        <!-- 3. OSCP -->
+        <div class="project-card reveal" data-repo="oscp">
+          <div class="project-card-header">
+            <span class="project-card-icon">⚙️</span>
+            <span class="card-stars">OS Core</span>
+          </div>
+          <h3>OSCP (操作系统核心课设)</h3>
+          <p>深入操作系统底层核心机制调度、进程同步、虚拟内存与文件系统构建的高质量工程实践。</p>
+          <div class="project-tech">
+            <span>Python</span><span>进程调度</span><span>系统设计</span>
+          </div>
+          <a href="https://github.com/yuhang234/oscp" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">→ GitHub 仓库</a>
+        </div>
+
+        <!-- 4. Firstmate Ecosystem Contributions -->
+        <div class="project-card reveal" data-repo="firstmate">
+          <div class="project-card-header">
+            <span class="project-card-icon">⚓</span>
+            <span class="card-stars">Automation</span>
+          </div>
+          <h3>Firstmate Ecosystem</h3>
+          <p>积极参与 Multi-Agent 协作与自主自治工作流生态系统的工程实践与探索，构建高可靠自动化运维流。</p>
+          <div class="project-tech">
+            <span>Shell</span><span>Agent 协同</span><span>CLI</span>
+          </div>
+          <a href="https://github.com/yuhang234/firstmate" target="_blank" rel="noopener noreferrer" class="showcase-repo-link">→ GitHub 仓库</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== GALLERY ==================== -->
+  <section class="section section-dark" id="gallery">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">SYSTEM GALLERY</span>
+        <h2 class="section-title">系统架构与界面图鉴</h2>
+        <p class="section-desc">从底层数据模型到交互界面的完整工程沉淀 · 点击可全屏查看</p>
+      </div>
+      <div class="gallery-grid reveal">
+        <!-- 1. VoiceNote Tray (Wide) -->
+        <div class="gallery-item gallery-wide">
+          <img src="assets/gallery-1-voicenote-tray.svg" alt="VoiceNote: 极简托盘常驻与实时转录工作台" loading="lazy">
+          <div class="gallery-caption">VoiceNote: 极简托盘常驻与实时转录工作台</div>
+        </div>
+
+        <!-- 2. VoiceNote Pipeline -->
+        <div class="gallery-item">
+          <img src="assets/gallery-2-voicenote-pipeline.svg" alt="VoiceNote: 麦克风捕获—VAD—CUDA 识别技术流图" loading="lazy">
+          <div class="gallery-caption">VoiceNote: 麦克风捕获—VAD—CUDA 识别技术流图</div>
+        </div>
+
+        <!-- 3. NoteFlow Editor -->
+        <div class="gallery-item">
+          <img src="assets/gallery-3-noteflow-editor.svg" alt="NoteFlow: CodeMirror 6 双栏 Markdown 实时渲染视图" loading="lazy">
+          <div class="gallery-caption">NoteFlow: CodeMirror 6 双栏 Markdown 实时渲染视图</div>
+        </div>
+
+        <!-- 4. NoteFlow Timeline -->
+        <div class="gallery-item">
+          <img src="assets/gallery-4-noteflow-timeline.svg" alt="NoteFlow: 多列瀑布流时间线与多维标签管理" loading="lazy">
+          <div class="gallery-caption">NoteFlow: 多列瀑布流时间线与多维标签管理</div>
+        </div>
+
+        <!-- 5. NoteFlow Heatmap (Wide) -->
+        <div class="gallery-item gallery-wide">
+          <img src="assets/gallery-5-noteflow-heatmap.svg" alt="NoteFlow: 知识库统计看板与写作热力图" loading="lazy">
+          <div class="gallery-caption">NoteFlow: 知识库统计看板与写作热力图</div>
+        </div>
+
+        <!-- 6. NoteFlow Attachments -->
+        <div class="gallery-item">
+          <img src="assets/gallery-6-noteflow-attachments.svg" alt="NoteFlow: 本地附件媒体库与资源链接管理器" loading="lazy">
+          <div class="gallery-caption">NoteFlow: 本地附件媒体库与资源链接管理器</div>
+        </div>
+
+        <!-- 7. TeamFlow Dashboard -->
+        <div class="gallery-item">
+          <img src="assets/gallery-7-teamflow-dashboard.svg" alt="TeamFlow: 项目协作主仪表盘与任务甘特看板" loading="lazy">
+          <div class="gallery-caption">TeamFlow: 项目协作主仪表盘与任务甘特看板</div>
+        </div>
+
+        <!-- 8. TeamFlow Graph -->
+        <div class="gallery-item">
+          <img src="assets/gallery-8-teamflow-graph.svg" alt="TeamFlow: AntV G6 动态任务—成员知识图谱" loading="lazy">
+          <div class="gallery-caption">TeamFlow: AntV G6 动态任务—成员知识图谱</div>
+        </div>
+
+        <!-- 9. TeamFlow AI -->
+        <div class="gallery-item">
+          <img src="assets/gallery-9-teamflow-ai.svg" alt="TeamFlow: 内置 AI 项目管家与多模型配置中心" loading="lazy">
+          <div class="gallery-caption">TeamFlow: 内置 AI 项目管家与多模型配置中心</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ACHIEVEMENTS ==================== -->
+  <section class="section" id="achievements">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">CREDENTIALS</span>
+        <h2 class="section-title">学术与荣誉成果</h2>
+      </div>
+      <!-- Exactly four verified achievements in mandated order -->
+      <div class="achievements-grid">
+        <!-- 1. 河北农业大学 · 计算机科学与技术 (本科, 2023 级) -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🏛️</div>
+          <h3>河北农业大学 · 计算机科学与技术</h3>
+          <p>本科（2023 级）</p>
+          <span class="achievement-badge">工学学士</span>
+        </div>
+
+        <!-- 2. 推免保送东北大学 · 控制工程 (硕士研究生) -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🎓</div>
+          <h3>推免保送东北大学 · 控制工程</h3>
+          <p>硕士研究生（推荐免试）</p>
+          <span class="achievement-badge">推免保送</span>
+        </div>
+
+        <!-- 3. 第19届全国大学生计算机设计大赛 · 国家级三等奖 -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🏆</div>
+          <h3>第19届全国大学生计算机设计大赛</h3>
+          <p>国家级三等奖</p>
+          <span class="achievement-badge">国家级三等奖</span>
+        </div>
+
+        <!-- 4. 2023学年一等奖学金 -->
+        <div class="achievement-card reveal">
+          <div class="achievement-icon">🎖️</div>
+          <h3>2023学年一等奖学金</h3>
+          <p>学业一等奖学金</p>
+          <span class="achievement-badge">一等奖学金</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="section section-dark" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">GET IN TOUCH</span>
+        <h2 class="section-title">联系与合作</h2>
+        <p class="section-desc">欢迎志同道合的工程师与导师交流碰撞，共同推进智能体与系统工程边界</p>
+      </div>
+      <div class="contact-grid">
+        <a href="https://github.com/yuhang234" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          </div>
+          <h3>GitHub 主页</h3>
+          <p>github.com/yuhang234</p>
+        </a>
+        <a href="https://github.com/yuhang234" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <h3>电子邮箱</h3>
+          <p>通过 GitHub / Issue 联络</p>
+        </a>
+        <div class="contact-card reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+          </div>
+          <h3>学术身份</h3>
+          <p>河北农大计科 · 东大控制工程推免</p>
+        </div>
+        <div class="contact-card reveal">
+          <div class="contact-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3>所在地域</h3>
+          <p>中国 · 东北大学 / 河北</p>
+        </div>
+      </div>
+      <div class="contact-cta reveal">
+        <div class="cta-card">
+          <h3>期待在 AI Agent 与先进系统工程领域深造与突破</h3>
+          <p>坚持“真实问题导向、稳定数据底座、轻量自主可控”的工程理念，持续输出高可靠、扎实有深度的开源系统。不论是科研课题探讨还是工程落地实践，均诚挚欢迎交流与合作。</p>
+          <div class="cta-info">
+            <span>🎯 专注方向：AI Agent 架构 / 本地优先应用</span>
+            <span>🎓 学术背景：河北农业大学计科 (2023级) · 推免保送东北大学控制工程 (硕士研究生)</span>
+            <span>💡 合作模式：学术科研 / 深度工程项目</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="footer-logo">yuhang234</span>
+          <p>谢雨航 · AI Agent 方向 · 系统架构与开源贡献</p>
+        </div>
+        <div class="footer-links">
+          <a href="https://github.com/yuhang234" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://github.com/yuhang234/VoiceNote" target="_blank" rel="noopener noreferrer">VoiceNote</a>
+          <a href="https://github.com/yuhang234/NoteFlow" target="_blank" rel="noopener noreferrer">NoteFlow</a>
+          <a href="https://github.com/yuhang234/TeamFlow" target="_blank" rel="noopener noreferrer">TeamFlow</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 谢雨航 (yuhang234). Hosted on GitHub Pages. Built with craft &amp; passion.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

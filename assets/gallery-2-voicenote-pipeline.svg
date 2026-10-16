@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0e14" />
+      <stop offset="100%" stop-color="#141922" />
+    </linearGradient>
+    <linearGradient id="nodeGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="glow1" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#3b82f6" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="520" fill="url(#bgGrad2)" rx="16"/>
+  <rect width="798" height="518" x="1" y="1" fill="none" stroke="#262f3d" stroke-width="1.5" rx="15"/>
+
+  <!-- Window Header -->
+  <rect x="0" y="0" width="800" height="42" fill="#141922" rx="16"/>
+  <rect x="0" y="26" width="800" height="16" fill="#141922"/>
+  <line x1="0" y1="42" x2="800" y2="42" stroke="#262f3d" stroke-width="1"/>
+  <circle cx="24" cy="21" r="5" fill="#ef4444"/>
+  <circle cx="42" cy="21" r="5" fill="#f59e0b"/>
+  <circle cx="60" cy="21" r="5" fill="#10b981"/>
+  <text x="400" y="26" text-anchor="middle" fill="#8e95a5" font-family="-apple-system, sans-serif" font-size="12" font-weight="600">VoiceNote 核心双阶离线语音识别架构流图</text>
+
+  <!-- Flow Nodes: Vertical/Curved Flow -->
+  <!-- Node 1: Microphone Input -->
+  <g transform="translate(60, 70)" filter="url(#glow1)">
+    <rect width="680" height="74" rx="10" fill="url(#nodeGrad1)" stroke="#388bfd" stroke-width="1.5"/>
+    <text x="30" y="32" font-size="22">🎙️</text>
+    <text x="70" y="32" fill="#f0f6fc" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">阶段 1: 麦克风环形缓冲区 (Audio Ring Buffer)</text>
+    <text x="70" y="54" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="11">16kHz 采样率 · 单声道 PCM 实时捕获 · 常驻系统托盘零卡顿后台流</text>
+    <rect x="580" y="22" width="76" height="26" rx="13" fill="rgba(56,139,253,0.15)" stroke="#388bfd"/>
+    <text x="618" y="39" text-anchor="middle" fill="#58a6ff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">INBOUND</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <g transform="translate(400, 144)">
+    <line x1="0" y1="0" x2="0" y2="28" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4 3"/>
+    <polygon points="-4,28 4,28 0,36" fill="#3b82f6"/>
+  </g>
+
+  <!-- Node 2: Silero VAD -->
+  <g transform="translate(60, 180)" filter="url(#glow1)">
+    <rect width="680" height="74" rx="10" fill="url(#nodeGrad1)" stroke="#10b981" stroke-width="1.5"/>
+    <text x="30" y="32" font-size="22">⚡</text>
+    <text x="70" y="32" fill="#f0f6fc" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">阶段 2: Silero VAD 端点检测 (Local CPU Engine)</text>
+    <text x="70" y="54" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="11">毫秒级静音过滤 · 静音帧直接丢弃 (0% GPU 开销) · 触发有效语音块切片</text>
+    <rect x="570" y="22" width="86" height="26" rx="13" fill="rgba(16,185,129,0.15)" stroke="#10b981"/>
+    <text x="613" y="39" text-anchor="middle" fill="#3fb950" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">ZERO COST</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <g transform="translate(400, 254)">
+    <line x1="0" y1="0" x2="0" y2="28" stroke="#10b981" stroke-width="2" stroke-dasharray="4 3"/>
+    <polygon points="-4,28 4,28 0,36" fill="#10b981"/>
+  </g>
+
+  <!-- Node 3: faster-whisper CUDA -->
+  <g transform="translate(60, 290)" filter="url(#glow1)">
+    <rect width="680" height="74" rx="10" fill="url(#nodeGrad1)" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="30" y="32" font-size="22">🚀</text>
+    <text x="70" y="32" fill="#f0f6fc" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">阶段 3: faster-whisper GPU 离线加速推理</text>
+    <text x="70" y="54" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="11">CUDA RTF 0.18 · 语毕 0.7 秒即时断句出字 · --selftest 保证显卡环境健康</text>
+    <rect x="580" y="22" width="76" height="26" rx="13" fill="rgba(139,92,246,0.15)" stroke="#8b5cf6"/>
+    <text x="618" y="39" text-anchor="middle" fill="#d2a8ff" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">RTF 0.18</text>
+  </g>
+
+  <!-- Arrow 3 -->
+  <g transform="translate(400, 364)">
+    <line x1="0" y1="0" x2="0" y2="28" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="4 3"/>
+    <polygon points="-4,28 4,28 0,36" fill="#8b5cf6"/>
+  </g>
+
+  <!-- Node 4: Persistence -->
+  <g transform="translate(60, 400)">
+    <rect width="680" height="74" rx="10" fill="url(#nodeGrad1)" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="30" y="32" font-size="22">📁</text>
+    <text x="70" y="32" fill="#f0f6fc" font-family="-apple-system, sans-serif" font-size="15" font-weight="700">阶段 4: 本地离线持久化与音频归档</text>
+    <text x="70" y="54" fill="#8e95a5" font-family="'JetBrains Mono', monospace" font-size="11">按日期生成 YYYY-MM-DD.md · FLAC 无损音频配套存盘 · 支持直接原声回放</text>
+    <rect x="560" y="22" width="96" height="26" rx="13" fill="rgba(245,158,11,0.15)" stroke="#f59e0b"/>
+    <text x="608" y="39" text-anchor="middle" fill="#f59e0b" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="700">100% OFFLINE</text>
+  </g>
+</svg>
